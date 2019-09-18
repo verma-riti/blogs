@@ -1,0 +1,17 @@
+<div class="container">
+
+  <div class="row">
+      <div class="col-sm-12 mt50">
+        <h1 class="text-center">Users</h1>
+      </div>
+      <div class="col-sm-4 col-xs-12" *ngFor="let user of users" >
+        <div class="card p10 m10">
+          <h4><b>{{user?.name}}</b></h4>
+          <p>{{user?.company?.name}}</p>
+          <a routerLink="/users/{{user?.id}}/posts">
+            <p>{{user?.company?.bs}}</p>
+          </a>
+        </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1 class="text-center mt50 mb20">Post</h1>
+      <table id="table">
+        <tr *ngFor="let post of posts">
+          <td class="m5 p5"><a routerLink="/users/{{post?.userId}}/posts/{{post?.id}}">{{post?.title}}</a></td>
+        </tr>
+      </table>
+
+      <div class="row text-center mt10">
+        <div class="col-sm-12">
+          <button *ngIf="previous_offset > 0 && previous_offset != null" class="btn btn-primary float_right m5 p5 " (click)="onPreviousClick()">
+            Previous</button>
+          <button *ngIf="next_offset>=0" class="btn btn-primary float_right m5 p5" (click)="onNextClick()">Next
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

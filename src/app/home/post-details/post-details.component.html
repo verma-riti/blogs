@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 mt50">
+      <button class="btn btn-primary float_right m5 p5"  (click)="onDeleteClicked()">Delete</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 mt10">
+      <h1>{{postDetails.title}}</h1>
+      <p class="m5 mt20">{{postDetails.body}}</p>
+
+      <button *ngIf="show_comments" class="btn btn-primary  m5 p5 " (click)="onShowCommentsClicked()">Comments</button>
+      <button *ngIf="hide_comments" class="btn btn-primary  m5 p5"  (click)="onhideCommentsClicked()">Hide Comments</button>
+      <div class="mt20" *ngIf="hide_comments">
+        <h3>All Comments</h3>
+        <div class="mt20" *ngFor="let comment of comments">
+          <app-comments [data]="comment"></app-comments>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
